@@ -1,0 +1,153 @@
+
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+
+
+
+/* Browser support fallbacks.
+ ========================================================================== */
+
+
+
+/**
+ * Fonts face.
+ */
+
+
+// @include font-face('Muli Black', 'Muli/muli-black-webfont', 900, normal, ttf);
+// @include font-face('Muli ExtraBold', 'Muli/muli-extrabold-webfont', 800, normal, ttf);
+// @include font-face('Muli Bold', 'Muli/muli-bold-webfont', 700, normal, ttf);
+// @include font-face('Muli SemiBold', 'Muli/Muli-SemiBold', 700, normal, ttf);
+// @include font-face('Muli', 'Muli/muli-regular-webfont', 400, normal, ttf);
+// @include font-face('Muli Light', 'Muli/muli-light-webfont', 300, normal, ttf);
+// @include font-face('Muli ExtraLight', 'Muli/muli-extralight-webfont', 200, normal, ttf);
+// @include font-face('Antonio', 'Antonio/Antonio-Bold', 900, normal, ttf);
+//
+// /**
+//  * Fonts stacks.
+//  */
+//
+// $stack-sans:        Arial, "Helvetica Neue", Helvetica, sans-serif !default;
+// $stack-serif:       "Times New Roman", Times, serif !default;
+// $font-stack-sans:   "Muli", $stack-sans; // Custom sans serif font.
+// $font-stack-serif:  $stack-serif; // Custom serif font.
+//
+// $font-black:        "Muli Black", $font-stack-sans;
+// $font-extrabold:    "Muli ExtraBold", $font-stack-sans;
+// $font-bold:         "Muli Bold", $font-stack-sans;
+// $font-light:        "Muli Light", $font-stack-sans;
+// $font-extralight:   "Muli ExtraLight", $font-stack-sans;
+// $font-semibold:     "Muli SemiBold", $font-stack-sans;
+// $font-antonio:      "Antonio", $font-stack-sans;
+//
+
+
+
+/* Fonts.
+ ========================================================================== */
+
+
+
+
+
+/**
+ * Font properties.
+ */
+
+$base-font-size:      ms(0);
+$base-line-height:    1.5;
+
+
+
+
+
+/* Colors.
+ ========================================================================== */
+
+
+/**
+ * Color defaults.
+ */
+
+$color-white:         #fff;
+$color-grey:          #3E3D45;
+$color-base:          #4C4C4E;
+$color-primary:       #5755FB;
+$color-secondary:     #45EBA5;
+$color-datos:         #ABABB2;
+
+
+
+/**
+ * Color states.
+ */
+
+$color-accent:        #4fc08d;
+$color-info:          #0076FF;
+$color-success:       #44DB5E;
+$color-alert:         #FE3824;
+$color-warning:       #FFCD00;
+
+
+/**
+ * Color palette modifiers.
+ */
+
+$palettes: (
+  black: (
+    base:       $color-base,
+    50:         #ECEFF1,
+    100:        #CFD8DC,
+    200:        #B0BEC5,
+    300:        #90A4AE,
+    400:        #78909C,
+    500:        #607D8B,
+    600:        #546E7A,
+    700:        #455A64,
+    800:        #37474F,
+    900:        #263238
+  )
+);
+
+$color-bittersweet:     #FC6767;
+$color-yellow_orange:   #FDAB4C;
+$color-shamrock:        #30C490;
+$color-cornflower_blue: #807BFF;
+$color-principal-red:   #FF5F6D;
+$color-secundary-red:   #FF8989;
+
+
+// Gradients
+
+$principal-gradient:  linear-gradient(to right, $color-primary, $color-cornflower_blue);
+$secundary-gradient:  linear-gradient(to right, $color-secondary, $color-shamrock);
+$secundary-gradient-reverse:  linear-gradient(to right, $color-shamrock, $color-secondary);
+$warning-gradient:    linear-gradient(to right, $color-principal-red, $color-secundary-red);
+
+
+
+/* Utilities.
+ ========================================================================== */
+
+/**
+ * Animations.
+ */
+
+$base-duration:       .4s;
+$base-timing:         cubic-bezier(0.215, 0.61, 0.355, 1);;
+
+
+
+/**
+ * Z-index list.
+ */
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;
+$zindex-loading:           1080;

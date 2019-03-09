@@ -1,0 +1,111 @@
+
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+
+
+/**
+ * Font face.
+ */
+
+// @mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+//   @font-face {
+//     font-family: quote($font-name);
+//     src: url('src/assets/fonts/#{$file-name}' + '.eot');
+//     src: url('src/assets/fonts/#{$file-name}' + '.eot?#iefix') format('embedded-opentype'),
+//          url('src/assets/fonts/#{$file-name}' + '.woff') format('woff'),
+//
+//          url('src/assets/fonts/#{$file-name}' + '.ttf') format('truetype'),
+//
+//          url('src/assets/fonts/#{$file-name}' + '.svg') format('svg');
+//     font-weight: $weight;
+//     font-style: $style;
+//   }
+// }
+
+
+@mixin font-face($name, $path, $weight: normal, $style: normal, $exts: otf eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+  	eot: "?",
+  	svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+  	otf: "opentype",
+  	ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+  	$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+  	$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+  	$src: append($src, url(quote("assets/fonts/" + $path + "." + $extmod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+  	font-family: quote($name);
+  	font-style: $style;
+  	font-weight: $weight;
+  	src: $src;
+  }
+}
+
+
+
+/**
+ * Font prefixes.
+ * 1. Font-size.
+ * 2. Line-height.
+ * 3. Font-weight.
+ * 4. Color.
+ */
+
+@mixin text($size, $l-height: null, $weight: null, $color: null) {
+  font-size: $size;
+  line-height: $l-height;
+  font-weight: $weight;
+  color: $color;
+}
+
+
+
+
+
+/* BEM mixins.
+ ========================================================================== */
+
+
+
+/**
+ * Element mixin.
+ */
+
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+
+
+/**
+ * Modifier mixin.
+ */
+
+@mixin m($modifier) {
+    &--#{$modifier} {
+        @content;
+    }
+}
+
+
+
+@mixin flex($align, $justify: initial) {
+  display: flex;
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  align-items: $align;
+  justify-content: $justify;
+}
