@@ -4,10 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './resource/index'
+import Header from './components/shared/Header'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
+Vue.component('app-header', Header)
 
 Vue.http.interceptor.before = (request, next) => {
   console.log(request);
